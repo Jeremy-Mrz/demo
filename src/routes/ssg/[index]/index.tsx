@@ -5,10 +5,13 @@ import { dynamicIds } from "~/routes";
 export default component$(() => {
   const location = useLocation();
   const index = location.params['index'];
+  const queryParams = location.url.searchParams.get('q');
   return (
     <>
       <h1>SSG dynamic route component</h1>
-      <p>Index: {index}</p>
+      <p><b>With</b> onStaticGenerate</p>
+      <p>Params: {index}</p>
+      <p>Search Params: {queryParams ?? 'undefined'}</p>
       <Link href="/">Home</Link>
     </>
   )

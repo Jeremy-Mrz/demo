@@ -9,11 +9,14 @@ export default component$(() => {
       <h1>Home</h1>
       <Link href="static">Static</Link>
       <div class="ssg">
-        {dynamicIds.map((id) => <Link key={id} href={`ssg/${id}`}>Dynamic SSG {id}</Link>)}
+        {dynamicIds.map((id) => <Link key={id}  href={`ssg/${id}?q=${id}`}>Link - SSG - Dynamic - {id}</Link>)}
+        {dynamicIds.map((id) => <a key={id}  href={`ssg/${id}?q=${id}`}>Anchor - SSG - Dynamic - {id}</a>)}
       </div>
       <div class="no-ssg">
-        {dynamicIds.map((id) => <Link key={id} href={`no-ssg/${id}`}>Dynamic no SSG {id}</Link>)}
+        {dynamicIds.map((id) => <Link key={id}  href={`no-ssg/${id}?q=${id}`}>Link - No SSG - Dynamic - {id}</Link>)}
+        {dynamicIds.map((id) => <a key={id}  href={`no-ssg/${id}?q=${id}`}>Anchor - No SSG - Dynamic - {id}</a>)}
       </div>
+
     </>
   );
 });
